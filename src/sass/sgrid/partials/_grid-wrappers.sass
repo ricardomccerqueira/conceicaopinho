@@ -1,0 +1,28 @@
+%vertical-gutter-margin
+  margin: $horizontal-gutter / 2 0
+
+  
+%horizontal-gutter-margin
+  margin: 0 $horizontal-gutter / 2
+
+  
+%horizontal-gutter-padding
+  padding: $horizontal-gutter / 2
+  
+
+%fluid-wrapper
+  @extend %clearfix
+  width: 100%
+  margin: 0
+
+
+%grid-wrapper
+  @extend %clearfix
+  margin: 0 auto
+  max-width: $max-width
+
+
+.grid-inner-wrapper,
+%inner-wrapper
+  @extend %horizontal-gutter-margin
+  @extend %horizontal-gutter-padding

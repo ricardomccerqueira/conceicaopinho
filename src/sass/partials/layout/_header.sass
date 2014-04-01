@@ -1,0 +1,21 @@
+.header
+  @extend .fluid-wrapper
+  @extend %box-shadow
+  @extend %background__colour--tertiary
+
+.header__content
+  @extend .grid-wrapper
+  background-image: url(../images/header.png)
+  min-height: 200px
+  background-repeat: no-repeat
+
+  @media ( max-width: $width-tablet)
+    min-height: 150px
+    background-position-y: -20px
+    background-position-x: -90px
+
+  @media ( max-width: 650px)
+    min-height: 100px
+    background-position-y: -10px
+    background-position-x: -65px
+    background-size: 360px

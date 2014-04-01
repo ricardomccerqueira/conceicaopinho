@@ -1,0 +1,5 @@
+@for $i from 1 through 20
+  $num: $i * $grid-interval
+
+  .mobile-#{$num}
+    @extend %column-mobile-#{$num}-width

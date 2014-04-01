@@ -1,0 +1,141 @@
+%float--left
+  float: left
+
+%float--right
+  float: right
+
+%backface-visibility
+  backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -ms-backface-visibility: hidden
+  -webkit-backface-visibility: hidden
+
+.display--block,
+%block
+  display: block
+
+.hidden,
+%hidden
+  display: none !important
+  
+%reset-box-model
+  padding: 0
+  margin: 0
+  border: 0
+
+.text-align--center,
+%text-align--center
+  text-align: center
+
+.flexbox--center,
+%flex-center
+  display: -webkit-box
+  display: -webkit-flex
+  display: -moz-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -moz-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -moz-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+
+.flexbox__child,
+%flex-child
+  position: relative
+
+.clearfix,
+%clearfix
+  zoom: 1
+  &:before,
+  &:after
+    content: "\0020"
+    display: block
+    height: 0
+    overflow: hidden
+  &:after
+    clear: both
+
+%box-shadow
+  box-shadow: rgba(0, 0, 0, 0.701961) 0px 0px 5px 0px
+
+%background__colour--tertiary
+  background-color: $tertiary-colour
+
+%transition__colour
+  +single-transition(color, 0.2s)
+
+.max-width--100,
+%max-width--100
+  max-width: 100%
+
+.padding--full,
+%padding--full
+  padding: $gutter
+
+.padding--double,
+%padding--double
+  padding: $gutter * 2
+
+.padding--half,
+%padding--half
+  padding: $gutter / 2
+
+.padding__bottom--half,
+%padding__bottom--half
+  padding-bottom: $gutter / 2
+
+.margin__bottom--half,
+%margin__bottom--half
+  margin-bottom: $gutter / 2
+
+.padding__bottom--full,
+%padding__bottom--full
+  padding-bottom: $gutter
+
+.margin__bottom--full,
+%margin__bottom--full
+  margin-bottom: $gutter
+
+
+%padding--double
+  padding: $gutter * 2
+
+%padding__top
+  padding-top: $gutter
+
+%padding__top--double
+  padding-top: $gutter * 2
+
+%margin__right--full
+  margin-right: $gutter
+
+.margin__top--full,
+%margin__top--full
+  margin-top: $gutter
+
+.margin__bottom--full,
+%margin__bottom--full
+  margin-bottom: $gutter
+
+.margin__top--double,
+%margin__top--double
+  margin-top: $gutter * 2
+
+.margin__bottom--double,
+%margin__bottom--double
+  margin-bottom: $gutter * 2
+
+%margin__right--double
+  margin-right: $gutter * 2
+
+%margin__right--none
+  margin-right: 0 !important
+
+%padding__right--none
+  padding-right: 0 !important

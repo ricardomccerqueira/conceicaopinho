@@ -1,0 +1,53 @@
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, minimal-ui"}
+    %meta{name: "format-detection", content: "telephone=no"}
+    %title Maria Conceição Pinho
+    %link{rel: "stylesheet", href: "./assets/css/main.css"}
+
+    /[if lte IE 8]
+      %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+
+  %body
+    = Haml::Engine.new(File.read('src/haml/partials/_header.haml')).render
+    
+    .fluid-wrapper
+      .grid-wrapper.margin__top--double
+        .grid-100
+          .padding--full
+            .padding--double.content-box.home__boxes--big
+              .grid-50.grid-md-30.mobile-hide
+                .padding--full
+                  %img.max-width--100{alt: "Trabalho de grupo", src: "./assets/images/trabalhodegrupo.jpg"}
+
+              .grid-50.grid-md-70.grid-sm-100
+                %h1.content-box__title.content-box__paragraph
+                  Trabalho em grupo
+                %h2.content-box__subtitle.content-box__border
+                  Nestes tempos de solidão é bom trabalhar em grupo​
+                
+                %ol
+                  %li 
+                    Árvore genealógica, Recursos Internos e Desafios 
+                  %li 
+                    Como comunicar bem mesmo em caso de conflito
+                  %li 
+                    As 4 fases da Cura
+
+                %p
+                  O trabalho em grupo dura cerca de 3 horas, em data, local e horário a estabelecer.
+
+
+    = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render
+
+    :plain
+      <!--[if gt IE 8]> -->
+    %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+    :plain  
+      <!-- <![endif]-->
+
+    %script{:type=>'text/javascript', :src=>'./assets/js/application.js'}
+    %script{:type=>'text/javascript', :src=>'http://w.sharethis.com/button/buttons.js'}
+    %script{:type=>'text/javascript'}
+      stLight.options({publisher: "bfb24a96-2a4c-4c97-979f-bc7fbf30d1ed", doNotHash: true, doNotCopy: true, hashAddressBar: false});

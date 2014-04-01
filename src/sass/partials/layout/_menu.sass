@@ -1,0 +1,26 @@
+.main-menu
+  @extend %padding__top--double
+  @extend %float--right
+  @extend .grid-inner-wrapper
+
+  @media ( max-width: 650px)
+    padding-top: 5px
+
+.main-menu__item
+  @extend %text__colour--secondary
+  @extend %text__decoration--none
+  @extend %transition__colour
+  @extend %margin__right--double
+
+  &:hover
+    @extend %text__colour--primary
+
+  &:last-child
+    @extend %margin__right--none
+
+  @media ( max-width: 650px)
+    text-decoration: none
+    width: 100%
+    display: block
+    text-align: right
+    padding: 5px 0

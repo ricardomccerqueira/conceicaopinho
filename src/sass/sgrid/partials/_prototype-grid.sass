@@ -1,0 +1,23 @@
+@for $i from 1 through 20
+  $num: $i * $grid-interval
+
+  .grid-#{$num}
+    @extend %column-#{$num}-width
+
+  .grid-md-#{$num}
+    @extend %column-tablet-#{$num}-width
+
+  .grid-sm-#{$num}
+    @extend %column-mobile-#{$num}-width
+  
+@for $i from 1 through 2
+  $num: $i * 33
+
+  .grid-#{$num}
+    @extend %column-#{$num}-width
+
+  .grid-md-#{$num}
+    @extend %column-tablet-#{$num}-width
+
+  .grid-sm-#{$num}
+    @extend %column-mobile-#{$num}-width
