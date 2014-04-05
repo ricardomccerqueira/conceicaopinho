@@ -1,0 +1,114 @@
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, minimal-ui"}
+    %meta{name: "format-detection", content: "telephone=no"}
+    %title Maria Conceição Pinho
+    %link{rel: "stylesheet", href: "./assets/css/main.css"}
+
+    /[if lte IE 8]
+      %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+
+  %body
+    = Haml::Engine.new(File.read('src/haml/partials/_header.haml')).render
+    
+
+    .fluid-wrapper
+      .grid-wrapper.margin__top--double
+        .grid-100
+          .padding--full
+            .padding--double.content-box
+              .grid-100
+                %h1.content-box__title.content-box__paragraph
+                  Quem Sou
+                %h2.content-box__subtitle.content-box__border
+                  E os aliados que me inspiram diariamente
+                %p 
+                  Nasci em África em 1956 onde vivi em pleno contacto com a Natureza até aos 18 anos. Num sábado quente, a guerra chegou abruptamente e deixei a casa em duas horas. Fui refugiada durante 7 dias e vim para Portugal na maior ponte aérea da História da Humanidade.
+                %p 
+                  Resido em Lisboa e continuo também a trabalhar em África.
+                %p 
+                  Sou mulher, mãe e avó e as mudanças que vivi permitem-me ter uma visão mais ampla da vida.
+                %p 
+                  Pratico Yoga.
+
+      .grid-wrapper.mobile-show.tablet-show
+        .grid-100
+          .padding--full
+            .padding--double.content-box.home__boxes
+              %h2.content-box__subtitle.content-box__border
+                Nelson Mandela
+              %p 
+                Nelson Mandela ensinou - me o poder e a capacidade que cada um tem quando aceita ser fiel ao melhor de si próprio, independentemente das circunstâncias em que se encontra. 
+              %p 
+                Nas suas lições para a Vida dizia 
+              %p 
+                "a apresentação conta e lembre-se sempre de sorrir."
+       
+              %h2.content-box__subtitle.content-box__border
+                Dr. Brian Weiss.
+              
+              %p 
+                Fiz a formação profissional com o Dr. Brian Weiss. 
+              %p
+                Recomendo vivamente esta formação pois o Dr Brian Weiss é um exemplo vivo de humildade, excelente capacidade técnica, de amor à verdade e à Cura.
+
+       
+              %h2.content-box__subtitle.content-box__border
+                Gandhi
+              %p 
+                Gandhi é o Mestre que me relembra 
+              %p 
+                " Seja a mudança que quer ver."
+
+      .grid-wrapper.mobile-hide.tablet-hide
+        .grid-33.grid-md-33.grid-sm-100
+          .padding--full
+            .padding--double.content-box.consultas__boxes--big
+              %h2.content-box__subtitle.content-box__border
+                Nelson Mandela
+              %p 
+                Nelson Mandela ensinou - me o poder e a capacidade que cada um tem quando aceita ser fiel ao melhor de si próprio, independentemente das circunstâncias em que se encontra. 
+              %p 
+                Nas suas lições para a Vida dizia 
+              %p 
+                "a apresentação conta e lembre-se sempre de sorrir."
+
+        .grid-33.grid-md-33.grid-sm-100
+          .padding--full
+            .padding--double.content-box.consultas__boxes--big
+              %h2.content-box__subtitle.content-box__border
+                Dr. Brian Weiss.
+              
+              %p 
+                Fiz a formação profissional com o Dr. Brian Weiss. 
+              %p
+                Recomendo vivamente esta formação pois o Dr Brian Weiss é um exemplo vivo de humildade, excelente capacidade técnica, de amor à verdade e à Cura.
+
+        .grid-33.grid-md-33.grid-sm-100
+          .padding--full
+            .padding--double.content-box.consultas__boxes--big
+              %h2.content-box__subtitle.content-box__border
+                Gandhi
+              %p 
+                Gandhi é o Mestre que me relembra 
+              %p 
+                " Seja a mudança que quer ver."
+
+    = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render
+
+    :plain
+      <!--[if gt IE 8]> -->
+    %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+    :plain  
+      <!-- <![endif]-->
+
+    %script{:type=>'text/javascript', :src=>'./assets/js/application.js'}
+    %script{:type=>'text/javascript', :src=>'http://w.sharethis.com/button/buttons.js'}
+    %script{:type=>'text/javascript'}
+      stLight.options({publisher: "bfb24a96-2a4c-4c97-979f-bc7fbf30d1ed", doNotHash: true, doNotCopy: true, hashAddressBar: false});
+
+
+
+
+ 

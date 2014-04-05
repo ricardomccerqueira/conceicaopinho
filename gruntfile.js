@@ -44,7 +44,11 @@ module.exports = function(grunt) {
       app: {
         files: {
             "src/html/index.html": "src/haml/index.html.haml",
-            "src/html/trabalhos-de-grupo.html": "src/haml/trabalhos-de-grupo.html.haml"
+            "src/html/contacto.html": "src/haml/contacto.html.haml",
+            "src/html/quem-sou.html": "src/haml/quem-sou.html.haml",
+            "src/html/consultas.html": "src/haml/consultas.html.haml",
+            "src/html/trabalhos-de-grupo.html": "src/haml/trabalhos-de-grupo.html.haml",
+            "src/html/o-meu-percurso.html": "src/haml/o-meu-percurso.html.haml"
         },
         options: {
             templatize: false
@@ -55,7 +59,11 @@ module.exports = function(grunt) {
       compile: {
         files: {
           'www/index.html': 'src/html/index.html',
-          'www/trabalhos-de-grupo.html': 'src/html/trabalhos-de-grupo.html'
+          'www/contacto.html': 'src/html/contacto.html',
+          'www/quem-sou.html': 'src/html/quem-sou.html',
+          'www/consultas.html': 'src/html/consultas.html',  
+          'www/trabalhos-de-grupo.html': 'src/html/trabalhos-de-grupo.html',
+          'www/o-meu-percurso.html': 'src/html/o-meu-percurso.html'
         },
         options: {
           type: 'html',

@@ -24,20 +24,39 @@
               .grid-60.grid-md-60.grid-sm-100
                 .padding__left--full
                   %h1.content-box__title.content-box__paragraph
-                    Trabalho em grupo
+                    Contacte-me
                   %h2.content-box__subtitle.content-box__border
-                    Nestes tempos de solidão é bom trabalhar em grupo​
-                  
-                  %ol
-                    %li 
-                      Árvore genealógica, Recursos Internos e Desafios 
-                    %li 
-                      Como comunicar bem mesmo em caso de conflito
-                    %li 
-                      As 4 fases da Cura
+                    Lisboa
 
-                  %p
-                    O trabalho em grupo dura cerca de 3 horas, em data, local e horário a estabelecer.
+                  .grid-40
+                    %p
+                      %strong 
+                        PsicoPraxis
+                      %br
+                      R. Conde Valbom,67,3º Esq.
+                      %br
+                      %strong 
+                        Quíron
+                      %br
+                      R. Vitor Cordon, 5.           
+                    %p
+                      %strong 
+                        Marcações:
+                      %br
+                      %a.paragraph{:href => "tel:00351962823979"} 
+                        +351 962 823 979
+                      %br
+                      %a.paragraph{:href => "mailto:via.das.estrelas@gmail.com"} 
+                        via.das.estrelas@gmail.com
+                  .grid-60
+                    %form{:action => ""}
+                      Nome
+                      %input.form__input{:type => "text"}
+                      E-mail
+                      %input.form__input{:type => "text"}
+                      Mensagem
+                      %textarea.form__text-area{:name => "", :cols => "30", :rows => "5"} 
+
 
 
     = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render

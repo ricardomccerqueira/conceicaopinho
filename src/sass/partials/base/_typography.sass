@@ -27,5 +27,15 @@ h2,
 
 p,
 %paragraph
+  color: $secondary-colour
   line-height: 1.5em
   font-size: 0.9em
+
+.paragraph
+  text-decoration: none
+  @extend %paragraph
+
+a.paragraph
+  &:hover
+    color: $secondary-colour
+    text-decoration: none
