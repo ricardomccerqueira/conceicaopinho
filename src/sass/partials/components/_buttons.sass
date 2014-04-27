@@ -1,0 +1,20 @@
+.button
+  width: 100%
+  padding: 0.8em 0
+  font-size: 1em
+  color: $primary-colour
+  background: $coloured-background
+  border-radius: 5px
+  border: 1px solid black
+  box-shadow: 1px 2px 0px 0 black
+  font-weight: bold
+  outline: 0
+  cursor: pointer
+  +transition(background 0.5s, box-shadow 0.5s)
+
+  &:hover
+    background: #D5D5D5
+
+  &:active,
+  &:focus
+    background: #D3D1D1

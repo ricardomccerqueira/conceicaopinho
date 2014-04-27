@@ -28,6 +28,7 @@ module.exports = function(grunt) {
         options: {
           config: 'config.rb',
           environment: 'development',
+          outputStyle: 'compressed',
           force: true
         }
       },
@@ -35,6 +36,7 @@ module.exports = function(grunt) {
         options: {
           config: 'config.rb',
           environment: 'production',
+          outputStyle: 'compressed',
           cssDir: 'www/assets/css/',
           force: true
         }
@@ -53,6 +55,16 @@ module.exports = function(grunt) {
         options: {
             templatize: false
         }
+      }
+    },
+    abovethefoldcss: {
+      options: {
+        css: 'www/assets/css/main.css',
+        aboveTheFold: ['src/html/index.html','src/html/contacto.html','src/html/quem-sou.html','src/html/consultas.html','src/html/trabalhos-de-grupo.html','src/html/o-meu-percurso.html'],
+        useEmptyStyleTag: true,
+        sassPattern: "/*!ABOVE_THE_FOLD */"
+      },
+      build: {
       }
     },
     htmlcompressor: {
@@ -78,7 +90,7 @@ module.exports = function(grunt) {
       },
       hamlsrc: {
         files: ['src/haml/**/*.haml'],
-        tasks: ['haml']
+        tasks: ['compass' , 'haml', 'abovethefoldcss'  ]
       },
       coffee: {
         files: 'src/coffee/**/*.coffee',
@@ -90,7 +102,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: 'src/sass/**/*.sass',
-        tasks: 'compass'
+        tasks: ['compass' , 'haml', 'abovethefoldcss']
       },
       htmlcompressor: {
         files: 'src/html/*',
@@ -105,6 +117,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-haml');
   grunt.loadNpmTasks('grunt-htmlcompressor');
+  grunt.loadNpmTasks('grunt-abovethefoldcss');
 
   grunt.registerTask('default', ['watch']);
 }; 

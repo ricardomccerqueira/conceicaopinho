@@ -1,13 +1,5 @@
 %html{lang: "en"}
-  %head
-    %meta{charset: "utf-8"}
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1, minimal-ui"}
-    %meta{name: "format-detection", content: "telephone=no"}
-    %title Maria Conceição Pinho
-    %link{rel: "stylesheet", href: "./assets/css/main.css"}
-
-    /[if lte IE 8]
-      %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+  = Haml::Engine.new(File.read('src/haml/partials/_head.haml')).render
 
   %body
     = Haml::Engine.new(File.read('src/haml/partials/_header.haml')).render
@@ -29,7 +21,7 @@
                     Lisboa
 
                   .grid-40
-                    %p
+                    %p 
                       %strong 
                         PsicoPraxis
                       %br
@@ -48,25 +40,46 @@
                       %br
                       %a.paragraph{:href => "mailto:via.das.estrelas@gmail.com"} 
                         via.das.estrelas@gmail.com
-                  .grid-60
+                  .grid-60.no-js
                     %form{:action => ""}
                       Nome
-                      %input.form__input{:type => "text"}
-                      E-mail
-                      %input.form__input{:type => "text"}
+                      %input#name.form__input{:type => "text"}
+                      Contacto
+                      %input#contact.form__input{:type => "text"}
                       Mensagem
-                      %textarea.form__text-area{:name => "", :cols => "30", :rows => "5"} 
+                      %textarea#message.form__text-area{:name => "", :cols => "30", :rows => "5"}
 
-
+                      %button#submit-form.button
+                        Submeter
 
     = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render
 
-    :plain
-      <!--[if gt IE 8]> -->
-    %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
-    :plain  
-      <!-- <![endif]-->
+= Haml::Engine.new(File.read('src/haml/partials/_scripts.haml')).render
 
-    %script{:type=>'text/javascript', :src=>'http://w.sharethis.com/button/buttons.js'}
-    %script{:type=>'text/javascript'}
-      stLight.options({publisher: "bfb24a96-2a4c-4c97-979f-bc7fbf30d1ed", doNotHash: true, doNotCopy: true, hashAddressBar: false});
+%script{:src=>'https://code.jquery.com/jquery-1.11.0.min.js'}
+ 
+%script{:type=>'text/javascript'}
+  :plain
+    $("#submit-form").on('click',function(e){
+      e.preventDefault();
+      $("#submit-form").html('A enviar mensagem...')
+
+      $.ajax({
+        type: "POST",
+        url: 'form/submit.php',
+        data: {
+          name    :$("#name").val(),
+          contact   :$("#contact").val(),
+          message  :$("#message").val()
+        },
+        success:function(data){
+          $("#submit-form").html('Mensagem enviada com sucesso');
+
+          ga('send', 'event', 'form' ,'from ' + $("#name").val(), '{ contact: '+ $("#contact").val()+' , message: '+$("#message").val()+' }')
+
+          setTimeout(function(){
+            $("#submit-form").html('Submeter')
+          },4000);
+        }
+      });
+    });

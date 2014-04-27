@@ -1,17 +1,9 @@
 %html{lang: "en"}
-  %head
-    %meta{charset: "utf-8"}
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1, minimal-ui"}
-    %meta{name: "format-detection", content: "telephone=no"}
-    %title Maria Conceição Pinho
-    %link{rel: "stylesheet", href: "./assets/css/main.css"}
-
-    /[if lte IE 8]
-      %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+  = Haml::Engine.new(File.read('src/haml/partials/_head.haml')).render
 
   %body
     = Haml::Engine.new(File.read('src/haml/partials/_header.haml')).render
-    
+
     .fluid-wrapper
       .grid-wrapper.margin__top--double
         .grid-70.grid-md-70
@@ -21,7 +13,7 @@
                 %h1.content-box__title.content-box__paragraph
                   Cura Profunda
                 %h2.content-box__subtitle.content-box__border
-                  Crie a Vida que quer viver
+                  Crie a Vida que quer viver 
                 %p 
                   Os tempos estão a mudar e todos queremos mudar para melhor.
                   %br
@@ -30,9 +22,9 @@
                   Podemos encontrar as raízes profundas dessas crenças no condicionamento cultural da sociedade, educação, família, meios de comunicação social e até nos nossos genes (activados pelas experiências sensoriais das nossas vidas).
                 %p
                   De seguida, podemos pesar as velhas ideias e conceitos contra os nossos novos sentimentos que anseiam por estabelecer as corretas relações humanas.
-
+  
         .grid-30.grid-md-30.mobile-hide.text-align--center.home__main-picture__holder
-          %img.home__main-picture{alt: "Maria Conceição Pinho", src: "./assets/images/homedetail.png"}
+          %img.home__main-picture{alt: "Maria Conceição Pinho", src: "./assets/images/homedetail.png"} 
 
       .grid-wrapper.mobile-show.tablet-show
         .grid-100
@@ -41,7 +33,8 @@
               %h2.content-box__subtitle.content-box__border
                 Biografia
               %p 
-                Psicoterapeuta credenciada pelo Instituto de Formação Avançada da  Faculdade de Medicina de Lisboa, credenciada pela Imaginal - Associação Portuguesa de Hipnose Clínica e Experimental  e pelo Brian Weiss Institute.
+                Psicoterapeuta credenciada pelo Instituto de Formação Avançada da  Faculdade de Medicina de Lisboa, pela Imaginal - Associação Portuguesa de Hipnose Clínica e Experimental  e pelo Brian Weiss Institute.
+              %p
                 Mestre em Psicologia, Psicoterapia e Aconselhamento pela Universidade Lusófona de Lisboa.
                 %br
                 Licenciada em Serviço Social pelo Instituto Superior de Serviço Social de Lisboa.
@@ -56,7 +49,7 @@
                 Faço terapias de reconstituição emocional e cognitiva.
                 %br
                 Cada consulta tem um tema ou assunto que vamos tratar.
-                %br
+                %br 
               %p
                 Utilizo  EMDR - Eye Movement Desensitization and Retroprocessing, técnica usada nos campos de refugiados devido à sua rápida eficácia e que é recomendado pela  Associação Psiquiátrica Americana como um dos principais métodos existentes  para o tratamento de situações traumáticas.
        
@@ -66,12 +59,25 @@
                 Como comunicar em caso de conflito a fim de estabelecer as corretas relações humanas.
               %p 
                 Venha preparar-se para comunicar de uma forma tranquila e eficaz a fim de aprofundar as suas relações
-                %br
+                %br 
                 3h de trabalho vivencial e com dicas muito práticas 
               %p
                 R. Vitor Cordon, 5 em Lisboa.
                 Noutros locais do país e estrangeiro com número mínimo de participantes
-
+              
+              %p 
+                Dia 8 de Maio no Quiron
+                %br
+                Inicio 15h 
+                %br
+                Fim previsto 18.30h
+                %br
+                Inscrições Telef 21 347 49 70 das 18h ás 21h 
+                %br
+                ou
+                %a{:href => "contacto"}
+                  Contacte-me
+ 
       .grid-wrapper.mobile-hide.tablet-hide
         .grid-33.grid-md-33.grid-sm-100
           .padding--full
@@ -79,10 +85,11 @@
               %h2.content-box__subtitle.content-box__border
                 Biografia
               %p 
-                Psicoterapeuta credenciada pelo Instituto de Formação Avançada da  Faculdade de Medicina de Lisboa, credenciada pela Imaginal - Associação Portuguesa de Hipnose Clínica e Experimental  e pelo Brian Weiss Institute.
+                Psicoterapeuta credenciada pelo Instituto de Formação Avançada da  Faculdade de Medicina de Lisboa, pela Imaginal - Associação Portuguesa de Hipnose Clínica e Experimental  e pelo Brian Weiss Institute.
+              %p
                 Mestre em Psicologia, Psicoterapia e Aconselhamento pela Universidade Lusófona de Lisboa.
-                %br
-                Licenciada em Serviço Social pelo Instituto Superior de Serviço Social de Lisboa.
+                %br 
+                Licenciada em Serviço Social pelo Instituto Superior de Serviço Social de Lisboa. 
               %p
                 Presidente da Direcção da Alubrat  - Associação Luso-Brasileira de Transpessoal. 
               %p 
@@ -92,7 +99,7 @@
             .padding--double.content-box.home__boxes
               %h2.content-box__subtitle.content-box__border
                 Consultas
-              %p 
+              %p
                 Faço terapias de reconstituição emocional e cognitiva.
                 %br
                 Cada consulta tem um tema ou assunto que vamos tratar.
@@ -114,19 +121,19 @@
                 R. Vitor Cordon, 5 em Lisboa.
                 Noutros locais do país e estrangeiro com número mínimo de participantes
 
+              %p 
+                Dia 8 de Maio no Quiron
+                %br
+                Inicio 15h 
+                %br
+                Fim previsto 18.30h
+                %br
+                Inscrições Telef 21 347 49 70 das 18h ás 21h 
+                %br
+                ou
+                %a.paragraph{:href => "contacto"}
+                  Contacte-me
+
     = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render
 
-    :plain
-      <!--[if gt IE 8]> -->
-    %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
-    :plain  
-      <!-- <![endif]-->
-
-    %script{:type=>'text/javascript', :src=>'http://w.sharethis.com/button/buttons.js'}
-    %script{:type=>'text/javascript'}
-      stLight.options({publisher: "bfb24a96-2a4c-4c97-979f-bc7fbf30d1ed", doNotHash: true, doNotCopy: true, hashAddressBar: false});
-
-
-
-
- 
+= Haml::Engine.new(File.read('src/haml/partials/_scripts.haml')).render

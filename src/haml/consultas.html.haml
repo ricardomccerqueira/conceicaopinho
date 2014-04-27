@@ -1,13 +1,5 @@
 %html{lang: "en"}
-  %head
-    %meta{charset: "utf-8"}
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1, minimal-ui"}
-    %meta{name: "format-detection", content: "telephone=no"}
-    %title Maria Conceição Pinho
-    %link{rel: "stylesheet", href: "./assets/css/main.css"}
-
-    /[if lte IE 8]
-      %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
+  = Haml::Engine.new(File.read('src/haml/partials/_head.haml')).render
 
   %body
     = Haml::Engine.new(File.read('src/haml/partials/_header.haml')).render
@@ -109,17 +101,7 @@
 
     = Haml::Engine.new(File.read('src/haml/partials/_footer.haml')).render
 
-    :plain
-      <!--[if gt IE 8]> -->
-    %script{:type=>'text/javascript', :src=>'./assets/js/modernizr.js'}
-    :plain  
-      <!-- <![endif]-->
-
-    %script{:type=>'text/javascript', :src=>'http://w.sharethis.com/button/buttons.js'}
-    %script{:type=>'text/javascript'}
-      stLight.options({publisher: "bfb24a96-2a4c-4c97-979f-bc7fbf30d1ed", doNotHash: true, doNotCopy: true, hashAddressBar: false});
-
-
+= Haml::Engine.new(File.read('src/haml/partials/_scripts.haml')).render
 
 
  
